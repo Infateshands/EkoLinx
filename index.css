@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  margin: 0;
+  background: url(img/background.jpg);
+  background-size: cover;
+  font-family: "Archivo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 12% 80% 8%;
+  grid-template-areas: "header", "main", "menu";
+  color: white;
+  margin: 0 3% 0 3%;
+}
+.container .header {
+  grid-area: "header";
+  display: flex;
+  justify-content: space-between;
+}
+.container .header img {
+  margin: 10px;
+  height: 40%;
+}
+.container .main {
+  grid-area: "main";
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container .main .title {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+}
+.container .main .title img {
+  height: 20%;
+  margin-top: 5%;
+}
+.container .main .routines .routines-item {
+  width: 90%;
+  padding-left: 2%;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  background: rgba(39, 39, 39, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 10px;
+}
+.container .main .routines .routines-item:hover {
+  background: rgba(39, 39, 39, 0.5);
+}
+.container .main .groups .groups-item-box {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container .main .groups .groups-item-box .groups-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  aspect-ratio: 1.2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  background: rgba(39, 39, 39, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.container .main .groups .groups-item-box .groups-item:hover {
+  background: rgba(39, 39, 39, 0.5);
+}
+.container .main .groups .groups::-webkit-scrollbar {
+  display: none;
+}
+.container .main .groups img {
+  width: 80%;
+}
+.container .main .groups .groups-img {
+  width: 50%;
+}
+.container .main::-webkit-scrollbar {
+  display: none;
+}
+.container .menu {
+  grid-area: "menu";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1%;
+}
+.container .menu .menu-row {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 8pt;
+}
+.container .menu .menu-row a {
+  height: 50%;
+}
+.container .menu .menu-row img {
+  height: 100%;
+}
+.container .button-large {
+  width: 80%;
+  height: 7%;
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  background: rgba(39, 39, 39, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18pt;
+  margin: 10px;
+}
+.container .button-large:hover {
+  background: rgba(39, 39, 39, 0.5);
+}
+.container .add-device-button {
+  margin-left: 10%;
+  margin-top: 10%;
+}
+.container .button-small {
+  width: 60%;
+  height: 7%;
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+  background: rgba(39, 39, 39, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18pt;
+  margin: 40px;
+  color: #1FA9E3;
+}
+.container .settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.container .account {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.container .account img {
+  width: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.cd__main {
+  background: #1FA9E3 !important;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.circle-container .circle {
+  margin: 20px;
+}
+
+/* configuration */
+/* mixin */
+/* placeholder */
+.circle.percentage-100 .percentage-bar:after, .circle.percentage-99 .percentage-bar:after, .circle.percentage-98 .percentage-bar:after, .circle.percentage-97 .percentage-bar:after, .circle.percentage-96 .percentage-bar:after, .circle.percentage-95 .percentage-bar:after, .circle.percentage-94 .percentage-bar:after, .circle.percentage-93 .percentage-bar:after, .circle.percentage-92 .percentage-bar:after, .circle.percentage-91 .percentage-bar:after, .circle.percentage-90 .percentage-bar:after, .circle.percentage-89 .percentage-bar:after, .circle.percentage-88 .percentage-bar:after, .circle.percentage-87 .percentage-bar:after, .circle.percentage-86 .percentage-bar:after, .circle.percentage-85 .percentage-bar:after, .circle.percentage-84 .percentage-bar:after, .circle.percentage-83 .percentage-bar:after, .circle.percentage-82 .percentage-bar:after, .circle.percentage-81 .percentage-bar:after, .circle.percentage-80 .percentage-bar:after, .circle.percentage-79 .percentage-bar:after, .circle.percentage-78 .percentage-bar:after, .circle.percentage-77 .percentage-bar:after, .circle.percentage-76 .percentage-bar:after, .circle.percentage-75 .percentage-bar:after, .circle.percentage-74 .percentage-bar:after, .circle.percentage-73 .percentage-bar:after, .circle.percentage-72 .percentage-bar:after, .circle.percentage-71 .percentage-bar:after, .circle.percentage-70 .percentage-bar:after, .circle.percentage-69 .percentage-bar:after, .circle.percentage-68 .percentage-bar:after, .circle.percentage-67 .percentage-bar:after, .circle.percentage-66 .percentage-bar:after, .circle.percentage-65 .percentage-bar:after, .circle.percentage-64 .percentage-bar:after, .circle.percentage-63 .percentage-bar:after, .circle.percentage-62 .percentage-bar:after, .circle.percentage-61 .percentage-bar:after, .circle.percentage-60 .percentage-bar:after, .circle.percentage-59 .percentage-bar:after, .circle.percentage-58 .percentage-bar:after, .circle.percentage-57 .percentage-bar:after, .circle.percentage-56 .percentage-bar:after, .circle.percentage-55 .percentage-bar:after, .circle.percentage-54 .percentage-bar:after, .circle.percentage-53 .percentage-bar:after, .circle.percentage-52 .percentage-bar:after, .circle.percentage-51 .percentage-bar:after {
+  position: absolute;
+  content: "";
+  -webkit-clip-path: inset(0 0 0 50%);
+  clip-path: inset(0 0 0 50%);
+  transform: rotate(0deg);
+  width: 120px;
+  height: 120px;
+  border: 20px solid #1FA9E3;
+  background: transparent;
+  border-radius: 100%;
+  transition: width 0.2s ease-out, height 0.2s ease-out, border-width 0.2s ease-out;
+}
+
+.circle.percentage-100 .percentage-bar, .circle.percentage-99 .percentage-bar, .circle.percentage-98 .percentage-bar, .circle.percentage-97 .percentage-bar, .circle.percentage-96 .percentage-bar, .circle.percentage-95 .percentage-bar, .circle.percentage-94 .percentage-bar, .circle.percentage-93 .percentage-bar, .circle.percentage-92 .percentage-bar, .circle.percentage-91 .percentage-bar, .circle.percentage-90 .percentage-bar, .circle.percentage-89 .percentage-bar, .circle.percentage-88 .percentage-bar, .circle.percentage-87 .percentage-bar, .circle.percentage-86 .percentage-bar, .circle.percentage-85 .percentage-bar, .circle.percentage-84 .percentage-bar, .circle.percentage-83 .percentage-bar, .circle.percentage-82 .percentage-bar, .circle.percentage-81 .percentage-bar, .circle.percentage-80 .percentage-bar, .circle.percentage-79 .percentage-bar, .circle.percentage-78 .percentage-bar, .circle.percentage-77 .percentage-bar, .circle.percentage-76 .percentage-bar, .circle.percentage-75 .percentage-bar, .circle.percentage-74 .percentage-bar, .circle.percentage-73 .percentage-bar, .circle.percentage-72 .percentage-bar, .circle.percentage-71 .percentage-bar, .circle.percentage-70 .percentage-bar, .circle.percentage-69 .percentage-bar, .circle.percentage-68 .percentage-bar, .circle.percentage-67 .percentage-bar, .circle.percentage-66 .percentage-bar, .circle.percentage-65 .percentage-bar, .circle.percentage-64 .percentage-bar, .circle.percentage-63 .percentage-bar, .circle.percentage-62 .percentage-bar, .circle.percentage-61 .percentage-bar, .circle.percentage-60 .percentage-bar, .circle.percentage-59 .percentage-bar, .circle.percentage-58 .percentage-bar, .circle.percentage-57 .percentage-bar, .circle.percentage-56 .percentage-bar, .circle.percentage-55 .percentage-bar, .circle.percentage-54 .percentage-bar, .circle.percentage-53 .percentage-bar, .circle.percentage-52 .percentage-bar, .circle.percentage-51 .percentage-bar {
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+/* percentage circle style */
+.health-row {
+  display: flex;
+}
+
+.circle {
+  width: 160px;
+  height: 160px;
+  cursor: default;
+}
+
+.circle span {
+  position: absolute;
+  display: block;
+  vertical-align: middle;
+  width: 160px;
+  height: 160px;
+  text-align: center;
+  color: white;
+  line-height: 160px;
+  font-size: 25px;
+  font-family: Helvetica, Arial, Geneva, sans-serif;
+  transition: font-size 0.2s ease-out;
+}
+
+.circle:before {
+  position: absolute;
+  content: "";
+  background-color: transparent;
+  width: 120px;
+  height: 120px;
+  border: 20px solid rgba(159, 157, 170, 0.25);
+  background: transparent;
+  border-radius: 100%;
+  transition: width 0.2s ease-out, height 0.2s ease-out, border-width 0.2s ease-out;
+}
+
+.circle .percentage-bar {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  -webkit-clip-path: inset(0 0 0 50%);
+  clip-path: inset(0 0 0 50%);
+}
+
+.circle .percentage-bar:before {
+  position: absolute;
+  content: "";
+  -webkit-clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 50% 0 0);
+  transform: rotate(0deg);
+  width: 120px;
+  height: 120px;
+  border: 20px solid #1FA9E3;
+  background: transparent;
+  border-radius: 100%;
+  transition: width 0.2s ease-out, height 0.2s ease-out, border-width 0.2s ease-out;
+}
+
+.circle:hover:before {
+  width: 140px;
+  height: 140px;
+  border-width: 10px;
+}
+
+.circle:hover span {
+  font-size: 45px;
+}
+
+.circle:hover .percentage-bar:before, .circle:hover .percentage-bar:after {
+  width: 140px;
+  height: 140px;
+  border-width: 10px;
+}
+
+.circle.percentage-5 .percentage-bar:before {
+  transform: rotate(18deg);
+}
+
+.circle.percentage-50 .percentage-bar:before {
+  transform: rotate(180deg);
+}
+
+.circle.percentage-75 .percentage-bar:before {
+  transform: rotate(270deg);
+}
+
+.circle.percentage-93 .percentage-bar:before {
+  transform: rotate(334.8deg);
+}
+
+.circle.percentage-100 .percentage-bar:before {
+  transform: rotate(360deg);
+}/*# sourceMappingURL=index.css.map */
