@@ -15,6 +15,24 @@ a:visited {
   color: white;
 }
 
+button {
+  height: 70%;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+}
+button img {
+  height: 50%;
+}
+
+#account-button img {
+  height: 70%;
+}
+
 .container {
   height: 100vh;
   display: grid;
