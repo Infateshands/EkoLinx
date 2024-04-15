@@ -1,17 +1,38 @@
 
-<!-- main area -->
-<div class="main">
-    <div class="account">
-        <img src="img/profile.png" alt="">
-        <h2>User Name</h2>
-        <h4>email@email.com</h4>
-        <div class="button-large">Update User Name</div>
-        <div class="button-large">Update Email</div>
-        <div class="button-large">Update Password</div>
-        <div class="button-small">Sign Out</div>
+    <!-- main area -->
+    <div class="main">
+        <div class="account">
+            <img src="img/profile.png" alt="">
+            <h2>
+                <span id="user-name">
+                   
+               </span>
+            </h2>
+            <h4><span id="email"></span></h4>
+            <div class="button-large" onclick="openUserNameModal()">Update User Name</div>
+            <div class="button-large" onclick="openEmailModal()">Update Email</div>
+            <div class="button-large" onclick="openPasswordModal()">Update Password</div>
+            <div class="button-small">Sign Out</div>
+        </div>
+
+
+        <div class="modal" id="user-name-modal">
+            Enter User Name:
+            <input type="text" name="" id="user-name-input">
+            <button class="modal-button" onclick="updateUserName()">Update</button>
+        </div>
+        <div class="modal" id="email-modal">
+            Enter Email:
+            <input type="text" name="" id="email-input" >
+            <button class="modal-button" onclick="updateEmail()">Update</button>
+        </div>
+        <div class="modal" id="password-modal">
+            Enter Password:
+            <input type="password" name="" id="password-input-1">
+            Confirm Password:
+            <input type="password" name="" id="password-input-2">
+            <button class="modal-button" onclick="updatePassword()">Update</button>
+        </div>
     </div>
-</div>
 
-
-
-
+   

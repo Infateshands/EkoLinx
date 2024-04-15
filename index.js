@@ -1,9 +1,12 @@
 let currentPage = 'home';
+let userName, email, password, password2;
+
 
 $(document).ready(function(){
     $("#main").load("pages/home.html");
     document.getElementById('home-button').src="img/Home_Selected.png";
     document.getElementById('home-button-label').style.color="#1FA9E3";
+    
 
     $("a").click(function() {
     var page = $(this).attr("href");
@@ -11,6 +14,8 @@ $(document).ready(function(){
     return false;
     });
 });
+
+
 
 function resetMenuImages() {
     document.getElementById("home-button").src="img/Home.png";
@@ -63,15 +68,13 @@ function setCurrentPage(current)  {
     if(currentPage == "account"){
         resetMenuImages();
         $("#main").load("pages/account.html");
+        
        
     }
-
-    // $("a").click(function() {
-    //     var page = $(this).attr("href");
-    //     $("#main").load(page);
-    //     return false;
-    //     });
 }
+
+
+// KASA API intergration
 
 // const { Client } = require('tplink-smarthome-api');
 
@@ -86,3 +89,37 @@ function setCurrentPage(current)  {
 //   device.getSysInfo().then(console.log);
 //   device.setPowerState(true);
 // });
+
+
+// MODAL FUNCTIONS
+function openUserNameModal(){
+    document.getElementById('user-name-modal').style.display = 'flex'
+}
+function updateUserName(){
+    userName = document.getElementById('user-name-input').value;
+    document.getElementById('user-name-modal').style.display = 'none';
+    document.getElementById('user-name').innerHTML = userName;
+}
+function openEmailModal(){
+    document.getElementById('email-modal').style.display = 'flex'
+}
+function updateEmail(){
+    email = document.getElementById('email-input').value;
+    document.getElementById('email-modal').style.display = 'none';
+    document.getElementById('email').innerHTML = email;
+}
+function openPasswordModal(){
+    document.getElementById('password-modal').style.display = 'flex'
+}
+function updatePassword(){
+    password1 = document.getElementById('password-input-1').value;
+    password2 = document.getElementById('password-input-2').value;
+    if(password1 == password2) {
+        alert('Password updated succesfully');
+        document.getElementById('password-modal').style.display = 'none';
+    }else {
+        alert('Passwords do not match');
+    }
+    
+    
+}
